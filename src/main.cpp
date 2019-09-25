@@ -21,13 +21,16 @@ void isr() {
   score = 0;
   fx = random(8);
   fy = random(8);
+  dir = NONE;
+  snake[0][0] = 4;
+  snake[0][0] = 4;
   gameover = false;
 }
 
 void setup()
 {
   pinMode(3, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(3), isr, RISING);
+  attachInterrupt(digitalPinToInterrupt(3), isr, RISING); 
   randomSeed(analogRead(2));
   fx = random(8);
   fy = random(8);
